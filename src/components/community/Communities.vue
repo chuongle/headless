@@ -1,7 +1,8 @@
 <template>
   <div class="card">
     <div v-for="community in communities" class="community">
-      <a :href="'/community/' + community.nid"><h2>{{ community.title }}</h2></a>
+      <router-link :to="'/community/' + community.nid"><h2>{{ community.title }}</h2></router-link>
+      <router-view class="view"></router-view>
       <div class="address">
         <span class="address1">{{ community.street1 }}, {{ community.street2 }}</span>
         <span class="address2">{{ community.city }}, {{ community.state }} {{ community.zipcode }}</span>

@@ -19,19 +19,13 @@ import env from '../../config/environment';
 
 export default {
   name: 'community',
-  props: {
-    id: {
-      type: String,
-    }
-  },
   data() {
     return {
       community: {}
     }
   },
   created: function() {
-    this.$http.get(env.url + env.community_api + this.id).then(response => {
-      console.log('response.data: ', response.data[0]);
+    this.$http.get(env.url + env.community_api + this.$route.params.id).then(response => {
       this.community = response.data[0];
     });
   }

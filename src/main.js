@@ -16,13 +16,9 @@ const router = new VueRouter({
 	base: __dirname,
 	routes: [
 		{ path: '/communities', component: Communities },
-		{ path: '/community/:id', component: Community, props: dynamicProp }
+		{ path: '/community/:id', component: Community }
 	]
 });
-
-function dynamicProp(route) {
-	return { id: route.params.id };
-}
 
 function getAlias(route) {
 	// console.log('route.params.id: ', route.params.id);
